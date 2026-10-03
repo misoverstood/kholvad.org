@@ -1,0 +1,5 @@
+# Links the checker skips. These sites block automated checkers but work in a browser.
+# Check them by hand now and then. One regex per line.
+^https://www\.canada\.ca/
+^https://www\.oag-bvg\.gc\.ca/
+^https://www\.gojobs\.gov\.on\.ca/

@@ -116,7 +116,7 @@
     - name: "Ontario Power Generation"
       url: https://www.opg.com/careers/
     - name: "Ontario Public Service"
-      url: https://www.gojobs.gov.on.ca/Search.aspx
+      url: https://www.gojobs.gov.on.ca/
     - name: "Ontario Science Centre"
       url: https://www.ontariosciencecentre.ca/Careers
     - name: "Ontario Securities Commission"
@@ -150,7 +150,7 @@
     - name: "Canada Border Services Agency"
       url: https://www.cbsa-asfc.gc.ca/job-emploi/menu-eng.html
     - name: "Canada Lands Company"
-      url: https://jobs.clc.ca/
+      url: https://www.clcl-sicl.ca/careers
     - name: "Canada Mortgage and Housing Corporation"
       url: https://careers.cmhc-schl.gc.ca/
     - name: "Canada Revenue Agency"

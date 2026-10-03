@@ -1,6 +1,6 @@
 name: Link check
 
-# Runs every Monday 09:00 UTC, whenever the link data or this file changes, and on demand.
+# Runs every Monday 09:00 UTC, whenever the link data, ignore list or this file changes, and on demand.
 on:
   schedule:
     - cron: "0 9 * * 1"
@@ -8,6 +8,7 @@ on:
     branches: [gh-pages]
     paths:
       - "_data/links.yml"
+      - ".lycheeignore"
       - ".github/workflows/link-check.yml"
   workflow_dispatch:
 
@@ -19,26 +20,37 @@ jobs:
   lychee:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Check links
         id: lychee
         uses: lycheeverse/lychee-action@v2
         with:
-          # 403 and 429 are accepted because many government sites block automated checkers.
+          # 403, 406 and 429 are accepted because many government sites block automated checkers.
+          # Sites that block completely are listed in .lycheeignore instead.
           args: >-
             --no-progress
-            --max-retries 2
-            --timeout 30
-            --accept 200..=299,403,429
+            --max-retries 3
+            --timeout 45
+            --accept 200..=299,403,406,429
             --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
             _data/links.yml
           fail: false
 
-      - name: Open an issue if links are broken
+      - name: Find the open broken-links issue
+        id: find
         if: steps.lychee.outputs.exit_code != 0
-        uses: peter-evans/create-issue-from-file@v5
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          n=$(gh issue list --repo ${{ github.repository }} --label broken-links --state open --json number --jq '.[0].number' 2>/dev/null || true)
+          echo "number=$n" >> "$GITHUB_OUTPUT"
+
+      - name: Open or update the issue
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v6
         with:
           title: Broken links found
           content-filepath: ./lychee/out.md
           labels: broken-links
+          issue-number: ${{ steps.find.outputs.number }}
