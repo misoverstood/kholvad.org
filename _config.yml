@@ -1,0 +1,6 @@
+# kholvad.org GitHub Pages (Jekyll) config
+# Any repo-only file (docs, notes, scripts) must be added to exclude before it is pushed.
+timezone: America/Toronto
+exclude:
+  - README.md
+  - docs

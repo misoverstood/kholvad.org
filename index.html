@@ -1,1 +1,129 @@
-kholvad.org
+---
+---
+{%- assign total = 0 -%}
+{%- for s in site.data.links -%}{%- assign total = total | plus: s.links.size -%}{%- endfor -%}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kholvad.org</title>
+<meta name="description" content="Career pages for {{ total }} public sector employers in Toronto, Ontario and Canada.">
+<meta property="og:title" content="kholvad.org">
+<meta property="og:description" content="Career pages for {{ total }} public sector employers in Toronto, Ontario and Canada.">
+<meta property="og:url" content="https://kholvad.org/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6f7f5; --ink:#1d201e; --muted:#5f6662; --rule:#a9afab;
+  --link:#24466e; --link-hover:#0f2a4a; --tag:#5c6b2a; --field:#ffffff;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#161917; --ink:#e4e7e4; --muted:#9ba29e; --rule:#59605c;
+    --link:#a3bfe0; --link-hover:#d2e2f5; --tag:#b3c27a; --field:#1f2320;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 var(--sans)}
+main{max-width:46rem;margin:0 auto;padding:2.5rem 1.25rem 3rem}
+.root{font:500 1.6rem/1.2 var(--mono);margin:0 0 .4rem;letter-spacing:-.01em}
+.intro{color:var(--muted);margin:0 0 1.5rem;max-width:38rem}
+.filter{display:flex;align-items:center;gap:.6rem;font-family:var(--mono);margin-bottom:1.5rem}
+.filter label{color:var(--muted);flex:none}
+.filter input{flex:1;min-width:0;font:inherit;font-size:1rem;color:var(--ink);background:var(--field);
+  border:1px solid var(--rule);border-radius:4px;padding:.45rem .6rem}
+.filter input:focus{outline:2px solid var(--link);outline-offset:1px;border-color:var(--link)}
+.tree,.tree ul{list-style:none;margin:0;padding:0}
+.tree{font:15px/1.7 var(--mono)}
+.tree li>.row{display:flex;align-items:baseline}
+.pre{white-space:pre;color:var(--rule);flex:none;user-select:none}
+.dir{font-weight:500}
+.count{color:var(--muted);margin-left:.5ch}
+.tree a{color:var(--link);text-decoration:none;overflow-wrap:anywhere}
+.tree a:hover{color:var(--link-hover);text-decoration:underline;text-underline-offset:3px}
+.tree a:focus-visible{outline:2px solid var(--link);outline-offset:2px;border-radius:2px}
+.tag{color:var(--tag);font-size:.8em;margin-left:1ch;white-space:nowrap}
+.empty{font-family:var(--mono);color:var(--muted);margin:1rem 0 0}
+[hidden]{display:none!important}
+footer{margin-top:2.5rem;font-size:.85rem;color:var(--muted)}
+footer p{margin:.25rem 0}
+@media (max-width:480px){
+  main{padding-top:1.75rem}
+  .root{font-size:1.35rem}
+  .tree{font-size:14px}
+}
+</style>
+</head>
+<body>
+<main>
+<h1 class="root">kholvad.org/</h1>
+<p class="intro">Career pages for {{ total }} public sector employers in Toronto, Ontario and Canada. Links marked directory lead to a list of more employers.</p>
+
+<div class="filter">
+  <label for="q">filter</label>
+  <input id="q" type="search" placeholder="Search {{ total }} employers" autocomplete="off" spellcheck="false">
+</div>
+
+<ul class="tree" id="tree">
+{%- for s in site.data.links %}
+  <li class="section">
+    <div class="row"><span class="pre">{% if forloop.last %}└── {% else %}├── {% endif %}</span><span class="dir">{{ s.section }}/</span><span class="count" data-total="{{ s.links.size }}">({{ s.links.size }})</span></div>
+    <ul>
+    {%- assign outer = forloop.last -%}
+    {%- for l in s.links %}
+      <li class="item" data-name="{{ l.name | downcase | escape }}"><div class="row"><span class="pre">{% if outer %}    {% else %}│   {% endif %}{% if forloop.last %}└── {% else %}├── {% endif %}</span><span><a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.name | escape }}</a>{% if l.directory %}<span class="tag">directory</span>{% endif %}</span></div></li>
+    {%- endfor %}
+    </ul>
+  </li>
+{%- endfor %}
+</ul>
+<p class="empty" id="empty" hidden>No employers match that search. Try a shorter word.</p>
+
+<footer>
+  <p>{{ total }} links, updated {{ site.time | date: "%Y-%m-%d" }}.</p>
+</footer>
+</main>
+
+<script>
+(function(){
+  var q=document.getElementById('q'), empty=document.getElementById('empty');
+  var sections=[].slice.call(document.querySelectorAll('#tree > .section'));
+  function redraw(){
+    var term=q.value.trim().toLowerCase(), shown=[];
+    sections.forEach(function(sec){
+      var name=sec.querySelector('.dir').textContent.toLowerCase();
+      var items=[].slice.call(sec.querySelectorAll('.item')), vis=[];
+      items.forEach(function(it){
+        var hit=!term || it.dataset.name.indexOf(term)>-1 || name.indexOf(term)>-1;
+        it.hidden=!hit; if(hit) vis.push(it);
+      });
+      sec.hidden=!vis.length;
+      var c=sec.querySelector('.count'), t=c.dataset.total;
+      c.textContent=term?'('+vis.length+' of '+t+')':'('+t+')';
+      if(vis.length) shown.push({sec:sec,items:vis});
+    });
+    shown.forEach(function(s,i){
+      var last=i===shown.length-1;
+      s.sec.querySelector('.row .pre').textContent=last?'└── ':'├── ';
+      s.items.forEach(function(it,j){
+        it.querySelector('.pre').textContent=(last?'    ':'│   ')+(j===s.items.length-1?'└── ':'├── ');
+      });
+    });
+    empty.hidden=shown.length>0;
+  }
+  q.addEventListener('input',redraw);
+  q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';redraw();}});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/' && document.activeElement!==q){e.preventDefault();q.focus();}
+  });
+})();
+</script>
+</body>
+</html>

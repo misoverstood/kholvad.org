@@ -1,0 +1,195 @@
+# kholvad.org link data
+# Edit this file to add, change or remove links.
+# Each entry needs a name and a url. Add  directory: true  for links that lead to a list of more employers.
+# Directory links are listed first in each section.
+
+- section: toronto
+  links:
+    - name: "Agencies & Corps"
+      url: https://www.toronto.ca/city-government/accountability-operations-customer-service/city-administration/city-managers-office/agencies-corporations/
+      directory: true
+    - name: "Build Toronto / CreateTO"
+      url: https://createto.ca/get-involved/careers/
+    - name: "Centre Island"
+      url: https://centreisland.ca/careers/
+    - name: "City of Toronto Jobs"
+      url: https://jobs.toronto.ca/jobsatcity/
+    - name: "Exhibition Place"
+      url: https://www.explace.on.ca/career/
+    - name: "Heritage Toronto"
+      url: https://www.heritagetoronto.org/join/careers/
+    - name: "Ports Toronto"
+      url: https://www.portstoronto.com/portstoronto/careers.aspx
+    - name: "Sankofa Square"
+      url: https://www.sankofasquare.ca/opportunities
+    - name: "TO Live"
+      url: https://www.tolive.com/Careers-&-Volunteering-Page
+    - name: "Toronto Atmospheric Fund"
+      url: https://taf.ca/about-us/job-openings/
+    - name: "Toronto Catholic District School Board"
+      url: https://www.tcdsb.org/page/jobs
+    - name: "Toronto Community Housing"
+      url: https://torontohousing.ca/careers
+    - name: "Toronto District School Board"
+      url: https://www.tdsb.on.ca/About-Us/Employment
+    - name: "Toronto Global"
+      url: https://torontoglobal.ca/careers/
+    - name: "Toronto Hydro"
+      url: https://www.torontohydro.com/careers
+    - name: "Toronto Parking Authority / Green P Parking"
+      url: https://parking.greenp.com/about/careers/
+    - name: "Toronto Police Service"
+      url: https://www.tps.ca/careers/
+    - name: "Toronto Public Library"
+      url: https://www.torontopubliclibrary.ca/about-the-library/jobs/
+    - name: "Toronto Seniors Housing Corporation"
+      url: https://www.torontoseniorshousing.ca/careers/
+    - name: "Toronto Transit Commission"
+      url: https://www.ttc.ca/Jobs
+    - name: "Toronto Zoo"
+      url: https://www.torontozoo.com/jobs
+    - name: "Waterfront Toronto"
+      url: https://www.waterfrontoronto.ca/opportunities/join-our-team
+
+- section: ontario
+  links:
+    - name: "Agencies"
+      url: https://www.pas.gov.on.ca/Home/Agencies-list
+      directory: true
+    - name: "Ministries"
+      url: https://www.ontario.ca/page/ministries
+      directory: true
+    - name: "Agricorp"
+      url: https://www.agricorp.com/en-ca/Careers/Pages/Default.aspx
+    - name: "Alcohol and Gaming Commission of Ontario"
+      url: https://www.agco.ca/careers
+    - name: "Algonquin College"
+      url: https://www.algonquincollege.com/careers/
+    - name: "Algonquin Forestry Authority"
+      url: https://algonquinforestry.on.ca/category/employment/
+    - name: "Art Gallery of Ontario"
+      url: https://jobs.jobvite.com/ago/jobs/viewall
+    - name: "eHealth Ontario"
+      url: https://ehealthontario.on.ca/en/hr/careers
+    - name: "Elections Ontario"
+      url: https://www.elections.on.ca/en/about-us/employment-centre.html
+    - name: "Fairness Commissioner"
+      url: https://www.fairnesscommissioner.ca/external/page/en/home
+    - name: "Hydro One"
+      url: https://jobs.hydroone.com/search
+    - name: "Independent Electricity System Operator"
+      url: https://www.ieso.ca/en/Corporate-IESO/Careers
+    - name: "Infrastructure Ontario"
+      url: https://www.infrastructureontario.ca/en/careers-at-io/
+    - name: "Legal Aid Ontario"
+      url: https://www.legalaid.on.ca/more/corporate/careers/
+    - name: "Legislative Assembly of Ontario"
+      url: https://laocareers.powerappsportals.com/
+    - name: "Liquor Control Board of Ontario"
+      url: https://www.lcbo.com/content/lcbo/en/corporate-pages/careers.html
+    - name: "Metro Toronto Convention Centre"
+      url: https://www.mtccc.com/careers/
+    - name: "Metrolinx"
+      url: https://www.metrolinx.com/en/about-us/careers
+    - name: "Municipal Property Assessment Corporation"
+      url: https://mpac.ca/en/AboutUs/CareersMPAC
+    - name: "Office of the Auditor General of Ontario"
+      url: https://auditor.on.ca/en/content/careers/applyingforaposition.html
+    - name: "Ombudsman Ontario"
+      url: https://www.ombudsman.on.ca/en/careers
+    - name: "Ontario Cannabis Store"
+      url: https://ocs.ca/pages/careers
+    - name: "Ontario Clean Water Agency"
+      url: https://www.ocwa.com/join-ocwa/job-opportunities/
+    - name: "Ontario Energy Board"
+      url: https://www.oeb.ca/about-oeb/careers
+    - name: "Ontario Health"
+      url: https://ontariohealth.ca/about/work/careers
+    - name: "Ontario Jobs & Employment"
+      url: https://www.ontario.ca/page/jobs-and-employment
+    - name: "Ontario Lottery and Gaming Corporation"
+      url: https://about.olg.ca/working-with-us/olg-careers/
+    - name: "Ontario Northland"
+      url: https://www.ontarionorthland.ca/en/company/company-you-keep
+    - name: "Ontario Place"
+      url: https://ontarioplace.com/en/about/careers/
+    - name: "Ontario Power Generation"
+      url: https://www.opg.com/careers/
+    - name: "Ontario Public Service"
+      url: https://www.gojobs.gov.on.ca/Search.aspx
+    - name: "Ontario Science Centre"
+      url: https://www.ontariosciencecentre.ca/Careers
+    - name: "Ontario Securities Commission"
+      url: https://www.osc.ca/en/about-us/careers-osc
+    - name: "Ontario Teachers' Pension Plan"
+      url: https://www.otpp.com/en-ca/careers/
+    - name: "Ontario Trillium Foundation"
+      url: https://otf.ca/who-we-are/work-ontario-trillium-foundation
+    - name: "OPSEU Pension Trust"
+      url: https://optrust.com/careers
+    - name: "Public Health Ontario"
+      url: https://www.publichealthontario.ca/en/about/careers/current-job-opportunities
+    - name: "Science North"
+      url: https://www.sciencenorth.ca/careers
+    - name: "St. Lawrence Parks Commission"
+      url: https://www.parks.on.ca/about/careers/
+    - name: "TVOntario"
+      url: https://tvo.me/work-with-us/
+    - name: "Workplace Safety and Insurance Board"
+      url: https://www.wsib.ca/en/careers
+
+- section: canada
+  links:
+    - name: "Public Service Commission (GC Jobs)"
+      url: https://emploisfp-psjobs.cfp-psc.gc.ca/psrs-srfp/applicant/page2440
+      directory: true
+    - name: "Bank of Canada"
+      url: https://careers.bankofcanada.ca/go/All-Job-Opportunities/2400817/
+    - name: "Business Development Bank of Canada"
+      url: https://careers.bdc.ca/positions
+    - name: "Canada Border Services Agency"
+      url: https://www.cbsa-asfc.gc.ca/job-emploi/menu-eng.html
+    - name: "Canada Lands Company"
+      url: https://jobs.clc.ca/
+    - name: "Canada Mortgage and Housing Corporation"
+      url: https://careers.cmhc-schl.gc.ca/
+    - name: "Canada Revenue Agency"
+      url: https://www.canada.ca/en/revenue-agency/corporate/careers-cra.html
+    - name: "Canadian Forces"
+      url: https://forces.ca/en/careers
+    - name: "Canadian Intellectual Property Office"
+      url: https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/patents/patent-examiner-recruitment
+    - name: "Canadian Security Intelligence Service"
+      url: https://www.canada.ca/en/security-intelligence-service/corporate/csis-jobs.html
+    - name: "Commissioner for Complaints for Telecommunications Services"
+      url: https://www.ccts-cprst.ca/careers/current-opportunities/
+    - name: "Communications Security Establishment Canada"
+      url: https://www.cse-cst.gc.ca/en/careers
+    - name: "Defence Construction Canada"
+      url: https://www.dcc-cdc.gc.ca/careers
+    - name: "Department of Finance Canada"
+      url: https://www.canada.ca/en/department-finance/corporate/jobs.html
+    - name: "Elections Canada"
+      url: https://elections.ca/content.aspx?section=emp&document=index&lang=e
+    - name: "Farm Credit Canada"
+      url: https://www.fcc-fac.ca/en/about-fcc/careers.html
+    - name: "National Research Council Canada"
+      url: https://nrc.canada.ca/en/corporate/careers
+    - name: "NAV Canada"
+      url: https://www.navcanada.ca/en/careers.aspx
+    - name: "Office of the Auditor General of Canada"
+      url: https://www.oag-bvg.gc.ca/internet/English/admin_e_41.html
+    - name: "Parks Canada"
+      url: https://parks.canada.ca/agence-agency/emplois-jobs
+    - name: "Pathways to Education Canada"
+      url: https://www.pathwaystoeducation.ca/careers/
+    - name: "Royal Canadian Mint"
+      url: https://www.mint.ca/en/people/careers
+    - name: "Royal Canadian Mounted Police"
+      url: https://rcmp.ca/en/careers-rcmp
+    - name: "Social Sciences and Humanities Research Council"
+      url: https://careers-carrieres.sshrc-crsh.gc.ca/en/
+    - name: "Telefilm Canada"
+      url: https://telefilm.ca/en/who-we-are/careers
+    - name: "VIA Rail Canada"
+      url: https://careers.viarail.ca/
