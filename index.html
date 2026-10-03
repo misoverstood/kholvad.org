@@ -44,6 +44,7 @@ main{max-width:46rem;margin:0 auto;padding:2.5rem 1.25rem 3rem}
 .tree{font:15px/1.7 var(--mono)}
 .tree li>.row{display:flex;align-items:baseline}
 .pre{white-space:pre;color:var(--rule);flex:none;user-select:none}
+.section+.section{margin-top:1.4rem}
 .dir{font-weight:500}
 .count{color:var(--muted);margin-left:.5ch}
 .tree a{color:var(--link);text-decoration:none;overflow-wrap:anywhere}
@@ -74,11 +75,10 @@ footer p{margin:.25rem 0}
 <ul class="tree" id="tree">
 {%- for s in site.data.links %}
   <li class="section">
-    <div class="row"><span class="pre">{% if forloop.last %}└── {% else %}├── {% endif %}</span><span class="dir">{{ s.section }}/</span><span class="count" data-total="{{ s.links.size }}">({{ s.links.size }})</span></div>
+    <div class="row"><span class="dir">{{ s.section }}/</span><span class="count" data-total="{{ s.links.size }}">({{ s.links.size }})</span></div>
     <ul>
-    {%- assign outer = forloop.last -%}
     {%- for l in s.links %}
-      <li class="item" data-name="{{ l.name | downcase | escape }}"><div class="row"><span class="pre">{% if outer %}    {% else %}│   {% endif %}{% if forloop.last %}└── {% else %}├── {% endif %}</span><span><a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.name | escape }}</a>{% if l.directory %}<span class="tag">directory</span>{% endif %}</span></div></li>
+      <li class="item" data-name="{{ l.name | downcase | escape }}"><div class="row"><span class="pre">{% if forloop.last %}└── {% else %}├── {% endif %}</span><span><a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.name | escape }}</a>{% if l.directory %}<span class="tag">directory</span>{% endif %}</span></div></li>
     {%- endfor %}
     </ul>
   </li>
@@ -109,11 +109,9 @@ footer p{margin:.25rem 0}
       c.textContent=term?'('+vis.length+' of '+t+')':'('+t+')';
       if(vis.length) shown.push({sec:sec,items:vis});
     });
-    shown.forEach(function(s,i){
-      var last=i===shown.length-1;
-      s.sec.querySelector('.row .pre').textContent=last?'└── ':'├── ';
+    shown.forEach(function(s){
       s.items.forEach(function(it,j){
-        it.querySelector('.pre').textContent=(last?'    ':'│   ')+(j===s.items.length-1?'└── ':'├── ');
+        it.querySelector('.pre').textContent=j===s.items.length-1?'└── ':'├── ';
       });
     });
     empty.hidden=shown.length>0;
