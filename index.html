@@ -58,6 +58,11 @@ main{max-width:46rem;margin:0 auto;padding:2.5rem 1.25rem 3rem}
 [hidden]{display:none!important}
 footer{margin-top:2.5rem;font-size:.85rem;color:var(--muted)}
 footer p{margin:.25rem 0}
+.links-ring{margin:.25rem 0}
+.links-ring a{color:var(--muted);text-decoration:none}
+.links-ring a:hover{text-decoration:underline;text-underline-offset:3px}
+.links-ring a:focus-visible{outline:2px solid var(--link);outline-offset:2px;border-radius:2px}
+.links-ring a[aria-current="page"]{color:var(--ink)}
 @media (max-width:480px){
   main{padding-top:1.75rem}
   .root{font-size:1.35rem}
@@ -91,6 +96,7 @@ footer p{margin:.25rem 0}
 
 <footer>
   <p>{{ total }} links, updated {{ site.time | date: "%Y-%m-%d" }}.</p>
+  <nav class="links-ring" data-links-ring aria-label="My other sites"></nav>
 </footer>
 </main>
 
@@ -126,5 +132,6 @@ footer p{margin:.25rem 0}
   });
 })();
 </script>
+<script src="https://misoverstood.github.io/links-ring/ring.js" defer></script>
 </body>
 </html>
