@@ -14,6 +14,8 @@
       url: https://centreisland.ca/careers/
     - name: "City of Toronto Jobs"
       url: https://jobs.toronto.ca/jobsatcity/
+    - name: "City of Toronto IT Jobs"
+      url: https://jobs.toronto.ca/jobsatcity/go/Information-Technology-Jobs/2578217/
     - name: "Exhibition Place"
       url: https://www.explace.on.ca/career/
     - name: "Heritage Toronto"
@@ -75,6 +77,8 @@
       url: https://www.elections.on.ca/en/about-us/employment-centre.html
     - name: "Fairness Commissioner"
       url: https://www.fairnesscommissioner.ca/external/page/en/home
+    - name: "Financial Accountability Office of Ontario"
+      url: https://fao-on.org/en/about/careers/
     - name: "Hydro One"
       url: https://jobs.hydroone.com/search
     - name: "Independent Electricity System Operator"
@@ -149,6 +153,8 @@
       url: https://careers.bdc.ca/positions
     - name: "Canada Border Services Agency"
       url: https://www.cbsa-asfc.gc.ca/job-emploi/menu-eng.html
+    - name: "Canada Deposit Insurance Corporation"
+      url: https://www.cdic.ca/about/careers/career-opportunities/
     - name: "Canada Lands Company"
       url: https://www.clcl-sicl.ca/careers
     - name: "Canada Mortgage and Housing Corporation"
@@ -164,7 +170,7 @@
     - name: "Commissioner for Complaints for Telecommunications Services"
       url: https://www.ccts-cprst.ca/careers/current-opportunities/
     - name: "Communications Security Establishment Canada"
-      url: https://www.cse-cst.gc.ca/en/careers
+      url: https://careers.cse-cst.gc.ca/en/careers-carrieres/professionals-professionnels/opportunities/
     - name: "Defence Construction Canada"
       url: https://www.dcc-cdc.gc.ca/careers
     - name: "Department of Finance Canada"
